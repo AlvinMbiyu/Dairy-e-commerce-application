@@ -14,15 +14,17 @@ class CreateDeliveryTable extends Migration
     public function up()
     {
         Schema::create('delivery', function (Blueprint $table) {
-            $table->increments('delivery_id');
-            $table->increments('Gid');
-            $table->unsignedInteger('Rid');
-            $table->unsignedInteger('Did');
+            $table->id();
+            $table->unsignedBigInteger('Gid');
+            $table->unsignedBigInteger('RRid');
+            $table->unsignedBigInteger('dppid');
             $table->unsignedInteger('amount_delivered');
-            $table->unsignedInteger('price_per_litre');
-            $table->unsignedInteger('total_price');
-            $table->string('delivery_confirmation');
+            $table->string('delivery_confirmation')->nullable();
             $table->timestamps();
+
+            $table->foreign('dppid')->references('id')->on('dppricing');
+            $table->foreign('RRid')->references('id')->on('_rrequests');
+            $table->foreign('Gid')->references('id')->on('farmergroups');
         });
     }
 

@@ -16,13 +16,19 @@ class CreateDeliveryPersonTable extends Migration
         Schema::create('_delivery_person', function (Blueprint $table) {
             $table->unsignedInteger('Did');
             $table->string('Name');
-            $table->string('Address');
+            $table->unsignedInteger('county_id');
+            $table->unsignedInteger('sc_id');
+            $table->unsignedInteger('town_id');
             $table->unsignedInteger('Phone_no');
             $table->string('email');
             $table->unsignedInteger('age');
             $table->string('password');
             $table->string('Op_vehicle');
             $table->string('vehicle_no');
+
+            $table->foreign('county_id')->references('id')->on('county');
+            $table->foreign('sc_id')->references('id')->on('subcounty');
+            $table->foreign('town_id')->references('id')->on('towns');
         });
     }
 

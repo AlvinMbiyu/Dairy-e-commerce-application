@@ -14,13 +14,18 @@ class CreateMilkCollectionTable extends Migration
     public function up()
     {
         Schema::create('milk_collection', function (Blueprint $table) {
-            $table->increments('MCid');
-            $table->increments('Gid');
+            $table->id();
+            $table->unsignedBigInteger('Gid');
             $table->unsignedInteger('Fid');
-            $table->unsignedInteger('Did');
+            $table->unsignedBigInteger('DRid');
             $table->unsignedInteger('amount_produced')->nullable();
-            $table->string('delivery_confirmation')->nullable();
+            $table->string('pickup_confirmation')->nullable();
             $table->timestamps();
+
+            $table->foreign('DRid')->references('id')->on('_drequests');
+            $table->foreign('Fid')->references('Fid')->on('farmers');
+            $table->foreign('Gid')->references('id')->on('farmergroups');
+
         });
     }
 

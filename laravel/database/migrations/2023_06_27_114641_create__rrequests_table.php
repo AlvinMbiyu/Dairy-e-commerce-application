@@ -14,12 +14,15 @@ class CreateRrequestsTable extends Migration
     public function up()
     {
         Schema::create('_rrequests', function (Blueprint $table) {
-            $table->increments('RRid');
+            $table->id();
             $table->unsignedInteger('Rid');
-            $table->increments('Gid');
+            $table->unsignedBigInteger('Gid');
             $table->unsignedInteger('demand_required');
             $table->string('response');
             $table->timestamps();
+
+            $table->foreign('Rid')->references('Rid')->on('_retailers');
+            $table->foreign('Gid')->references('id')->on('farmergroups');
         });
     }
 

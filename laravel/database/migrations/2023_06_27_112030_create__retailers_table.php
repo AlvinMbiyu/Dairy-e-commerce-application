@@ -17,11 +17,17 @@ class CreateRetailersTable extends Migration
             $table->unsignedInteger('Rid');
             $table->string('Name');
             $table->string('BName');
-            $table->string('BAddress');
+            $table->unsignedInteger('county_id');
+            $table->unsignedInteger('sc_id');
+            $table->unsignedInteger('town_id');
             $table->unsignedInteger('Phone_no');
             $table->string('email');
             $table->unsignedInteger('age');
             $table->string('password');
+
+            $table->foreign('county_id')->references('id')->on('county');
+            $table->foreign('sc_id')->references('id')->on('subcounty');
+            $table->foreign('town_id')->references('id')->on('towns');
         });
     }
 

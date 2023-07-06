@@ -14,12 +14,15 @@ class CreateDrequestsTable extends Migration
     public function up()
     {
         Schema::create('_drequests', function (Blueprint $table) {
-            $table->increments('DRid');
+            $table->id();
             $table->unsignedInteger('Did');
-            $table->increments('Gid');
+            $table->unsignedBigInteger('Gid');
             $table->unsignedInteger('est_amount');
             $table->string('response');
             $table->timestamps();
+
+            $table->foreign('Gid')->references('id')->on('farmergroups');
+            $table->foreign('Did')->references('Did')->on('_delivery_person');
         });
     }
 

@@ -15,10 +15,12 @@ class CreateDppricingTable extends Migration
     {
         Schema::create('dppricing', function (Blueprint $table) {
             $table->unsignedInteger('Did');
-            $table->increments('dppid');
+            $table->id();
             $table->unsignedInteger('dpricing');
             $table->unsignedInteger('per_litre')->nullable();
             $table->timestamps();
+
+            $table->foreign('Did')->references('Did')->on('_delivery_person');
         });
     }
 
