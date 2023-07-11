@@ -17,7 +17,7 @@ class CreateDeliveryTable extends Migration
             $table->id();
             $table->unsignedBigInteger('Gid');
             $table->unsignedBigInteger('RRid');
-            $table->unsignedBigInteger('dppid');
+            $table->unsignedBigInteger('dppid');//payment
             $table->unsignedInteger('amount_delivered');
             $table->string('delivery_confirmation')->nullable();
             $table->timestamps();

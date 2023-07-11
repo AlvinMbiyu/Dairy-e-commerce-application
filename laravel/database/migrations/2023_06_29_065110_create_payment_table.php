@@ -19,7 +19,7 @@ class CreatePaymentTable extends Migration
             $table->unsignedInteger('Rid');
             $table->unsignedBigInteger('delivery_id');
             $table->unsignedInteger('total_price');
-            $table->string('payment_confirmation')->nullable();
+            $table->string('payment_confirmation')->nullable();//bool change
             $table->timestamps();
 
             $table->foreign('Rid')->references('Rid')->on('_retailers');

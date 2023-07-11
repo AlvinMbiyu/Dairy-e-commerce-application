@@ -16,7 +16,7 @@ class CreateDppricingTable extends Migration
         Schema::create('dppricing', function (Blueprint $table) {
             $table->unsignedInteger('Did');
             $table->id();
-            $table->unsignedInteger('dpricing');
+            $table->unsignedInteger('dpricing');//based on standard price you 
             $table->unsignedInteger('per_litre')->nullable();
             $table->timestamps();
 

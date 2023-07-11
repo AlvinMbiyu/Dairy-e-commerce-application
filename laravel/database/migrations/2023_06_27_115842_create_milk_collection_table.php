@@ -19,7 +19,7 @@ class CreateMilkCollectionTable extends Migration
             $table->unsignedInteger('Fid');
             $table->unsignedBigInteger('DRid');
             $table->unsignedInteger('amount_produced')->nullable();
-            $table->string('pickup_confirmation')->nullable();
+            $table->string('pickup_confirmation')->nullable();//bool change
             $table->timestamps();
 
             $table->foreign('DRid')->references('id')->on('_drequests');

@@ -18,7 +18,7 @@ class CreateDrequestsTable extends Migration
             $table->unsignedInteger('Did');
             $table->unsignedBigInteger('Gid');
             $table->unsignedInteger('est_amount');
-            $table->string('response');
+            $table->string('response');//change to bool
             $table->timestamps();
 
             $table->foreign('Gid')->references('id')->on('farmergroups');
