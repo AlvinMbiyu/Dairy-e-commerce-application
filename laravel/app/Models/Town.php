@@ -26,7 +26,7 @@ class Town extends Model
         return $this->hasMany(Retailers::class, 'county_id', 'id');
     }
 
-    public function Deliverypersons(){
-        return $this->hasMany(Deliveryperson::class, 'county_id', 'id');
+    public function Deliveryperson(){
+        return $this->hasMany(Deliveryperson::class, 'county_id', 'Did');
     }
 }
