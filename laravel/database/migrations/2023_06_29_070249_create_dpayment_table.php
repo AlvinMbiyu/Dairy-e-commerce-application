@@ -19,7 +19,7 @@ class CreateDpaymentTable extends Migration
             $table->unsignedBigInteger('Gid');
             $table->unsignedBigInteger('delivery_id');
             $table->unsignedInteger('total_dprice');
-            $table->string('payment_confirmation')->nullable();
+            $table->boolean('payment_confirmation')->nullable();
 
             $table->foreign('Did')->references('Did')->on('_delivery_person');
             $table->foreign('Gid')->references('id')->on('farmergroups');

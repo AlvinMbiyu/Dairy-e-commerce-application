@@ -74,15 +74,15 @@
                                 <p class="mb-0">Enter your email and password to sign in</p>
                             </div>
                             <div class="card-body">
-                                <form  method="POST" action="{{URL::to('auth')}}">
+                                <form  method="POST" action="{{url('retailer/auth')}}">
                                     @csrf
                                     <label>Email</label>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" name="email">
+                                        <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" name="email" value="" required>
                                     </div>
                                     <label>Password</label>
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" name="password">
+                                        <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" value="" name="password" required>
                                     </div>
                                     <div class="form-check form-switch">
 
@@ -94,7 +94,7 @@
                             <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                 <p class="mb-4 text-sm mx-auto">
                                     Don't have an account?
-                                    <a href="{{URL::to('register')}}" class="text-info text-gradient font-weight-bold"> <i class="fa fa-user"></i>  Sign up</a>
+                                    <a href="{{URL::to('retailer/register')}}" class="text-info text-gradient font-weight-bold"> <i class="fa fa-user"></i>  Sign up</a>
                                 </p>
                             </div>
                         </div>

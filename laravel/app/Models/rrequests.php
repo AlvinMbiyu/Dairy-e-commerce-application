@@ -18,11 +18,17 @@ class rrequests extends Model
         'response'
     ];
 
+    public $timestamps = false;
+
     public function Retailer(){
         return $this->belongsTo(Retailers::class, 'Rid');
     }
 
     public function FarmerGroups(){
         return $this->belongsTo(FarmerGroups::class, 'Gid');
+    }
+
+    public function delivery(){
+        return $this->hasOne(Delivery::class, 'RRid', 'id');
     }
 }

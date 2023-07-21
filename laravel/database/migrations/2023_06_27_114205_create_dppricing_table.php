@@ -17,7 +17,7 @@ class CreateDppricingTable extends Migration
             $table->unsignedInteger('Did');
             $table->id();
             $table->unsignedInteger('dpricing');
-            $table->unsignedInteger('per_litre')->nullable();
+            $table->boolean('per_litre');
             $table->timestamps();
 
             $table->foreign('Did')->references('Did')->on('_delivery_person');

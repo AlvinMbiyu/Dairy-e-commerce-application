@@ -19,7 +19,7 @@ class CreateDeliveryTable extends Migration
             $table->unsignedBigInteger('RRid');
             $table->unsignedBigInteger('dppid');
             $table->unsignedInteger('amount_delivered');
-            $table->string('delivery_confirmation')->nullable();
+            $table->boolean('delivery_confirmation');
             $table->timestamps();
 
             $table->foreign('dppid')->references('id')->on('dppricing');

@@ -40,6 +40,21 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'farmer' => [
+            'driver' => 'session',
+            'provider' => 'farmers',
+        ],
+    
+        'retailers' => [
+            'driver' => 'session',
+            'provider' => 'retailers',
+        ],
+        
+    
+        'delivery_person' => [
+            'driver' => 'session',
+            'provider' => 'delivery_persons',
+        ],
     ],
 
     /*
@@ -58,18 +73,29 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
+    
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'farmers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Farmers::class,
+        ],
+    
+        'retailers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Retailers::class,
+        ],
+        
+    
+        'delivery_persons' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\DeliveryPerson::class,
+        ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------

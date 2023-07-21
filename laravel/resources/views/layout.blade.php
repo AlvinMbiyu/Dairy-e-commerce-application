@@ -18,8 +18,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{URL::to('img/k-housing-favicon.png')}}">
-  <link rel="icon" type="image/png" href="{{URL::to('img/k-housing-favicon.png')}}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{URL::to('')}}">
+  <link rel="icon" type="image/png" href="{{URL::to('')}}">
   <title>
     @yield('headTitle') Dairy e-comm App
   </title>
@@ -35,6 +35,15 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="{{URL::to('css/soft-ui-dashboard.css?v=1.0.6')}}" rel="stylesheet" />
   <link rel="stylesheet" href="{{URL::to('css/custom.css')}}">
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery (required by Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   @livewireStyles
 </head>
 

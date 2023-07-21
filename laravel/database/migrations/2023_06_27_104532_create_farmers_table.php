@@ -19,12 +19,13 @@ class CreateFarmersTable extends Migration
             $table->unsignedInteger('county_id');
             $table->unsignedInteger('sc_id');
             $table->unsignedInteger('town_id');
-            $table->unsignedInteger('Phone_no');
+            $table->string('Phone_no');
             $table->string('email');
             $table->unsignedInteger('age');
             $table->string('password');
             $table->unsignedBigInteger('Gid')->nullable();
 
+            $table->primary('Fid');
             $table->foreign('Gid')->references('id')->on('farmergroups')->onDelete('cascade');
             $table->foreign('county_id')->references('id')->on('county');
             $table->foreign('sc_id')->references('id')->on('subcounty');

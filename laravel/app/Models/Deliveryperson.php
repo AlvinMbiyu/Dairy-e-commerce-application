@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Deliveryperson extends Model
+class Deliveryperson extends Authenticatable
 {
     use HasFactory;
 
     protected $table = "_delivery_person";
     protected $primaryKey = "Did";
     protected $fillable = [
-        
+
         'Name',
         'county_id',
         'sc_id',
@@ -24,16 +25,33 @@ class Deliveryperson extends Model
         'Op_vehicle',
         'vehicle_no'
     ];
+    public $timestamps = 'false';
 
-    public function County(){
+    protected $hidden = [
+        'password',
+        'remember_token'
+    ];
+    public function County()
+    {
         return $this->belongsTo(County::class, 'county_id');
     }
 
-    public function SubCounty(){
+    public function SubCounty()
+    {
         return $this->belongsTo(Subcounty::class, 'sc_id');
     }
 
-    public function Town(){
+    public function Town()
+    {
         return $this->belongsTo(Town::class, 'town_id');
+    }
+
+    public function requests()
+    {
+        return $this->belongsTo(drequests::class, 'Did', 'Did');
+    }
+    
+    public function dppricing(){
+        return $this->hasOne(DPpricing::class, 'Did', 'Did');
     }
 }

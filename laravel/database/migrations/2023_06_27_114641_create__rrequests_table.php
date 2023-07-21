@@ -18,7 +18,7 @@ class CreateRrequestsTable extends Migration
             $table->unsignedInteger('Rid');
             $table->unsignedBigInteger('Gid');
             $table->unsignedInteger('demand_required');
-            $table->string('response');
+            $table->boolean('response')->nullable();
             $table->timestamps();
 
             $table->foreign('Rid')->references('Rid')->on('_retailers');

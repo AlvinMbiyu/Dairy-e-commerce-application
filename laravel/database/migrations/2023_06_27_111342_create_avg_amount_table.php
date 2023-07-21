@@ -14,6 +14,7 @@ class CreateAvgAmountTable extends Migration
     public function up()
     {
         Schema::create('avg_amount', function (Blueprint $table) {
+            $table->id();
             $table->unsignedInteger('Fid');
             $table->unsignedInteger('Total_avg_Amount');
             $table->unsignedInteger('No_of_liv');

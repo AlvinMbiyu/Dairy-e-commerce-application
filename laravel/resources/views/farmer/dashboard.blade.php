@@ -16,7 +16,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link  (request()->is('farmer/{National_id}/fprofile')) ? 'active' : ''" href="{{URL::to('farmer/{National_id}/profile')}}">
+          <a class="nav-link  (request()->is('farmer/fprofile')) ? 'active' : ''" href="{{URL::to('farmer/fprofile')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fa-solid fa-user-tie"></i>
             </div>
@@ -24,7 +24,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  (request()->is('farmer/{National_id}/joinfgroup')) ? 'active' : ''" href="{{URL::to('farmer/{National_id}/joinfgroup')}}">
+          <a class="nav-link  (request()->is('/farmer/{National_id}/viewgroups/')) ? 'active' : ''" href="{{URL::to('/farmer/{National_id}/viewgroups/')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="fa-solid fa-right-to-bracket"></i>
             </div>
@@ -44,5 +44,6 @@
 @section('content')
         
 Join a farmer's group today to start earning
+
 
 @endsection

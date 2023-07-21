@@ -18,7 +18,7 @@ class CreateFpaymentTable extends Migration
             $table->unsignedBigInteger('MCid');
             $table->unsignedBigInteger('pid');
             $table->unsignedBigInteger('Gid');
-            $table->string('payment_confirmation')->nullable();
+            $table->boolean('payment_confirmation')->nullable();
 
             $table->foreign('pid')->references('id')->on('payment');
             $table->foreign('Gid')->references('id')->on('farmergroups');

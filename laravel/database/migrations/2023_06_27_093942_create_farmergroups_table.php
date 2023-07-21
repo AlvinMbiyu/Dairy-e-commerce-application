@@ -15,8 +15,15 @@ class CreateFarmergroupsTable extends Migration
     {
         Schema::create('farmergroups', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('members');
-            $table->unsignedInteger('price_per_litre');
+            $table->unsignedInteger('price_per_litre')->nullable();
+            $table->unsignedInteger('county_id');
+            $table->unsignedInteger('sc_id');
+            $table->unsignedInteger('town_id');
+            $table->timestamps();
+
+            $table->foreign('county_id')->references('id')->on('county');
+            $table->foreign('sc_id')->references('id')->on('subcounty');
+            $table->foreign('town_id')->references('id')->on('towns');
         });
     }
 

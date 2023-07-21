@@ -8,20 +8,35 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\DeliverCont;
 use App\Http\Controllers\FarmerCont;
+use App\Http\Controllers\RetailCont;
 use App\Http\Livewire\Inputaddress;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('register', [FarmerCont::class, 'showr']);
-    Route::post('fetch-subcounties', [Inputaddress::class, 'fetchSubcounties']);
-    Route::post('fetch-towns', [Inputaddress::class, 'fetchTowns']);
-    Route::post('authRegister', [FarmerCont::class, 'authRegister']);
+    Route::get('register', [RegisteredUserController::class, 'create'])
+        ->name('register');
 
-    Route::get('login', [FarmerCont::class, 'showl'])->name('login');
-    Route::post('auth', [FarmerCont::class, 'auth'])->name('auth-login');
-    Route::get('farmer/{National_id}/dashboard', [FarmerCont::class, 'dashboard']);
-    Route::get('farmer/{National_id}/fprofile', [FarmerCont::class, 'profile']);
+    Route::post('register', [RegisteredUserController::class, 'store']);
+
+    Route::get('login', [AuthenticatedSessionController::class, 'create'])
+        ->name('login');
+
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+
+
+
+
+
+
+
+
+
+
+
+   
+
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
 
@@ -48,6 +63,7 @@ Route::middleware('auth')->group(function () {
         ->name('verification.send');
 
 
+
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
         ->name('password.confirm');
 
@@ -56,3 +72,4 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 });
+

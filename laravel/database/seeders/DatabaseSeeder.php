@@ -14,5 +14,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call([
+            KenyaCountySeeder::class,
+            retailers::class,
+            farmers::class,
+            farmergroups::class,
+            deliverypersons::class,
+            DPpricing::class
+            ]
+        );
     }
 }

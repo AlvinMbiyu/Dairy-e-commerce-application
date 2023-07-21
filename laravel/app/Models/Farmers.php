@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Farmers extends Model
+class Farmers extends Authenticatable
 {
     use HasFactory;
     protected $table = "farmers";
@@ -19,7 +20,8 @@ class Farmers extends Model
         'password',
         'email',
         'Phone_no',
-        'age'
+        'age',
+        'Gid'
     ];
 
     public $timestamps = false;
@@ -41,4 +43,23 @@ class Farmers extends Model
         return $this->belongsTo(Town::class, 'town_id');
     }
 
+    public function fg(){
+        return $this->belongsTo(FarmerGroups::class, 'Gid');
+    }
+
+    public function MC(){
+        return $this->hasMany(MilkCollection::class, 'Fid', 'Fid');
+    }
+
+    public function fpayments(){
+        return $this->hasMany(fpayment::class, 'Fid', 'id');
+    }
+
+    public function liv(){
+        return $this->hasMany(Livestock::class, 'Fid', 'Fid');
+    }
+
+    public function avgamount(){
+        return $this->hasOne(avg_amount::class, 'Fid', 'id');
+    }
 }

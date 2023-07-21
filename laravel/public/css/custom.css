@@ -1,0 +1,46 @@
+/* Inactive link*/ 
+.navbar-vertical .navbar-nav .nav-item .nav-link .icon i {
+    color: black;
+    }
+    
+    /* active link*/ 
+    .navbar-vertical .navbar-nav .nav-item .nav-link.active .icon i {
+        color: white;
+        }
+
+        .group-item{
+            display: flex;
+            flex-direction: row;
+            border: 2px solid grey;
+            background-color: white;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .group-details{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        .fg_price {
+            margin: 2px;
+            padding: 5px;
+            display: inline-block;
+            word-wrap: break-word;
+            font-size:small;
+            flex-wrap: wrap;
+        }
+        .fg_members {
+            margin: 2px;
+            padding: 5px;
+            font-size:x-large;
+        }
+
+        .fg_loc {
+            margin: 0px 1px 1px 15px;
+            padding: 1px;
+            font-size:smaller;
+        }
+
+        
