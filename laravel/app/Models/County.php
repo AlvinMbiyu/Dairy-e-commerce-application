@@ -11,8 +11,7 @@ class County extends Model
 
     protected $table = "county";
     protected $primarykey = "id";
-    protected $fillable = [
-        'name'];
+    protected $fillable = ['name'];
 
     public function subCounty(){
         return $this->hasMany(Subcounty::class, 'county_id', 'id');

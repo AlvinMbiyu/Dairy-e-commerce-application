@@ -16,13 +16,8 @@ class CreateDppricingTable extends Migration
         Schema::create('dppricing', function (Blueprint $table) {
             $table->unsignedInteger('Did');
             $table->id();
-<<<<<<< HEAD
             $table->unsignedInteger('dpricing');
             $table->boolean('per_litre');
-=======
-            $table->unsignedInteger('dpricing');//based on standard price you 
-            $table->unsignedInteger('per_litre')->nullable();
->>>>>>> d30721dbf7a66b5435cc52c1269da303e11d519f
             $table->timestamps();
 
             $table->foreign('Did')->references('Did')->on('_delivery_person');
